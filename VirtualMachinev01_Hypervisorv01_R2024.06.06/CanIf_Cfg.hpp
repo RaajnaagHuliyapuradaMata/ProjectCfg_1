@@ -12,6 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
+#define CANIF_CFG_NUM_CANRXPDUIDS                                              1
 
 /******************************************************************************/
 /* MACROS                                                                     */
@@ -20,7 +21,30 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-typedef uint8 Type_CfgEcuabCanIf_st;
+typedef uint8* Type_CtrlIdTable_Ptr;
+typedef uint8  CanIf_RxCbk_Prototype;
+typedef uint8  CanIf_Cfg_RxPduType_tst;
+typedef uint8  CanIf_Cfg_TxPduConfig_tst;
+typedef uint8  Type_CtrlCanCtrlRef;
+
+typedef struct{
+   void (*User_ControllerBusOff)(
+         VAR(uint8,                            AUTOMATIC) ControllerId
+   );
+   void (*User_ControllerModeIndication)(
+         VAR(uint8,                            AUTOMATIC) ControllerId
+      ,  VAR(Type_EcuabCanIf_eModesController, AUTOMATIC) ControllerMode
+   );
+}CanIf_CallbackFuncType;
+
+typedef struct{
+   Type_CtrlCanCtrlRef CtrlCanCtrlRef;
+}CanIf_Cfg_CtrlConfig_tst;
+
+typedef struct{
+   Type_CtrlIdTable_Ptr      CtrlIdTable_Ptr;
+   CanIf_Cfg_CtrlConfig_tst* CanIf_CtrlConfigPtr;
+}Type_CfgEcuabCanIf_st;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
