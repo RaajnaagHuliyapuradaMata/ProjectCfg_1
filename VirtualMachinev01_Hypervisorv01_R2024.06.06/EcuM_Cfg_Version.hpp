@@ -1,7 +1,7 @@
 #pragma once
 /******************************************************************************/
 /* File   : EcuM_Cfg_Version.hpp                                              */
-/* Author : Nagaraja HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA-MATA                                        */
 /* Date   : 01.02.1982                                                        */
 /******************************************************************************/
 

@@ -1,7 +1,7 @@
 #pragma once
 /******************************************************************************/
 /* File   : CanIf_Cfg_SchM.hpp                                                */
-/* Author : Nagaraja HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA-MATA                                        */
 /* Date   : 01.02.1982                                                        */
 /******************************************************************************/
 
@@ -18,6 +18,8 @@
 /******************************************************************************/
 #define SchM_Enter_CanIf_ControllerState()
 #define SchM_Exit_CanIf_ControllerState()
+#define SchM_Enter_CanIf_TxRxNotifNoNest()
+#define SchM_Exit_CanIf_TxRxNotifNoNest()
 
 /******************************************************************************/
 /* TYPEDEFS                                                                   */

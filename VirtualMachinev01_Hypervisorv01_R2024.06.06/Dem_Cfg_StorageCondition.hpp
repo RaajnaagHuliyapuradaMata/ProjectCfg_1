@@ -1,7 +1,7 @@
 #pragma once
 /******************************************************************************/
 /* File   : Dem_Cfg_StorageCondition.hpp                                      */
-/* Author : Nagaraja HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA-MATA                                        */
 /* Date   : 01.02.1982                                                        */
 /******************************************************************************/
 

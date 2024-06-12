@@ -1,7 +1,7 @@
 #pragma once
 /******************************************************************************/
 /* File   : CanIf_Cfg_SymbolicNames.hpp                                       */
-/* Author : Nagaraja HULIYAPURADA MATA                                        */
+/* Author : Nagaraja HULIYAPURADA-MATA                                        */
 /* Date   : 01.02.1982                                                        */
 /******************************************************************************/
 
