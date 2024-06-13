@@ -8,6 +8,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ComStack_Types.hpp"
 #include "Types_EcuabCanIf.hpp"
 
 /******************************************************************************/
@@ -48,31 +49,6 @@ typedef struct{
 }CanIf_Cfg_RxPduType_tst;
 
 typedef struct{
-   uint8 CtrlId;
-}Type_CanIf_CtrlConfig;
-
-typedef struct{
-   uint8                  CanObjectId;
-   Type_CanIf_CtrlConfig* CanIf_CtrlConfigPtr;
-}Type_CanIf_HthConfig;
-
-typedef struct{
-   Type_CanIf_HthConfig* CanIf_HthConfigPtr;
-}Type_CanIf_TxBufferConfig;
-
-typedef struct{
-   Type_CanIf_TxBufferConfig* CanIf_TxBufferConfigPtr;
-   uint32                     TxPduId;
-   uint32                     TxPduCanId;
-   uint32                     TxPduCanIdType;
-   uint32                     TxPduTargetPduId;
-   uint8                      TxPduTxUserUL;
-   uint8                      TxPduReadNotifyStatus;
-   uint8                      TxPduLength_u8;
-   boolean                    TxTruncEnabled_b;
-}CanIf_Cfg_TxPduConfig_tst;
-
-typedef struct{
    void (*User_ControllerBusOff)(
          VAR(uint8,                            AUTOMATIC) ControllerId
    );
@@ -83,8 +59,31 @@ typedef struct{
 }CanIf_CallbackFuncType;
 
 typedef struct{
+   uint8               CtrlId;
    Type_CtrlCanCtrlRef CtrlCanCtrlRef;
 }CanIf_Cfg_CtrlConfig_tst;
+
+typedef struct{
+   uint8                     CanObjectId;
+   CanIf_Cfg_CtrlConfig_tst* CanIf_CtrlConfigPtr;
+}Type_CanIf_HthConfig;
+
+typedef struct{
+   Type_CanIf_HthConfig* CanIf_HthConfigPtr;
+}Type_CanIf_TxBufferConfig;
+
+typedef struct{
+   Type_CanIf_TxBufferConfig* CanIf_TxBufferConfigPtr;
+   void (*UserTxConfirmation)(uint32 TxPduTargetPduId);
+   uint32                     TxPduId;
+   uint32                     TxPduCanId;
+   uint32                     TxPduCanIdType;
+   uint32                     TxPduTargetPduId;
+   uint8                      TxPduTxUserUL;
+   uint8                      TxPduReadNotifyStatus;
+   uint8                      TxPduLength_u8;
+   boolean                    TxTruncEnabled_b;
+}CanIf_Cfg_TxPduConfig_tst;
 
 typedef struct{
    void (*CanIfRxPduIndicationName)(
